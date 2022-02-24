@@ -3,8 +3,10 @@ const ctx = c.getContext("2d");
 
 const canvas_width = 600;
 const canvas_height = 600;
+
 c.width = canvas_width;
 c.height = canvas_height;
+
 const cpu_cores = window.navigator.hardwareConcurrency;
 console.log(cpu_cores);
 
