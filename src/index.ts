@@ -1,3 +1,4 @@
+import Entity from "./entities/entity";
 import Hitbox from "./hitbox";
 import Mesh from "./mesh";
 import Triangle from "./triangle";

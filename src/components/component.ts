@@ -1,14 +1,18 @@
 import Entity from "../entities/entity";
 
-type componentReqs = string[];
+export type ComponentName = "position" | "mesh";
 
 export default abstract class Component {
 	abstract name:string;
-	required: string[] = [];
+	abstract required: ComponentName[];
+	public attached:boolean = false;
+	public entity?:Entity;
 
 	constructor() {}
-	attach(entity:Entity):boolean {
-		return this.canAttach(entity);
+
+	attach(entity:Entity) {
+		this.entity = entity;
+		this.attached = true;
 	}
 
 	canAttach(entity:Entity):boolean {
