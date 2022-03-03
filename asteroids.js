@@ -7,10 +7,6 @@ const canvas_height = 600;
 c.width = canvas_width;
 c.height = canvas_height;
 
-const cpu_cores = window.navigator.hardwareConcurrency;
-console.log(cpu_cores);
-
-
 function vector2(x, y){
 	this.x = x;
 	this.y = y;
@@ -57,6 +53,7 @@ function distancebetween(v1, v2){
 }
 
 function area(x1, y1, x2, y2,x3, y3) {return Math.abs((x1*(y2-y3) + x2*(y3-y1)+x3*(y1-y2))/2)}
+
 
 function isInside(v1, v2, v3, p){   
    	/* Calculate area of triangle ABC */
@@ -114,7 +111,7 @@ function particle(pos){
 }
 
 
-function asteroid(x,y, dir, magnitude){
+function asteroid(x, y, dir, magnitude){
 	this.angleRad = Math.PI*(dir)/180;
 	this.magnitude = magnitude;
 	this.vertCount = 12;

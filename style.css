@@ -6,7 +6,6 @@ body {
 	padding: 0;
 	height: 100vh;
 	background-color: #222;
-
 }
 canvas{
 	background-color: #fff;
@@ -18,9 +17,6 @@ img {
   image-rendering: crisp-edges;
 }
 
-
 canvas {
 	margin: 0;
-	width: min(90vh, 90vw);
-	height: min(90vh, 90vw);
 }
