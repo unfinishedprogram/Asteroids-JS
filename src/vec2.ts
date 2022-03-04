@@ -1,10 +1,21 @@
-export default class Vec2 {
+export interface IVec2 {
+	set(x:number, y:number):this,
+	add(v:Vec2):this,
+	subtract(v:Vec2):this,
+	multiply(n:number):this,
+	magnitude:number,
+	copy( v:Vec2 ):this,
+	clone():Vec2,
+	distance(v:Vec2):number,
+}
+
+export default class Vec2 implements IVec2{
 	constructor(public x:number, public y:number) {
-		
 	}
 
-	set(x:number, y:number){
+	set (x:number, y:number):this {
 		[this.x, this.y] = [x, y];
+		return this;
 	}
 
 	add(v:Vec2){
@@ -43,6 +54,7 @@ export default class Vec2 {
 	
 	public copy( v:Vec2 ){
 		[this.x, this.y] = [v.x, v.y];
+		return this;
 	}
 
 	public clone(): Vec2 {

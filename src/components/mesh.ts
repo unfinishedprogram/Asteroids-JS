@@ -8,7 +8,16 @@ export default class Mesh extends Component {
 	name:"mesh" = "mesh";
 	verts:Vec2[] = [];
 	tris:Tri[] = [];
+	
 	constructor() {
 		super();
+	}
+
+	public getVerts() {
+		return this.verts;
+	}
+
+	public getTris(){
+		return this.tris;
 	}
 }

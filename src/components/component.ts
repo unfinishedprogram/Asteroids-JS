@@ -1,9 +1,9 @@
 import Entity from "../entities/entity";
 
-export type ComponentName = "position" | "mesh";
+export type ComponentName = "position" | "mesh" | "renderer";
 
 export default abstract class Component {
-	abstract name:string;
+	abstract name: ComponentName;
 	abstract required: ComponentName[];
 	public attached:boolean = false;
 	public entity?:Entity;
@@ -13,9 +13,12 @@ export default abstract class Component {
 	attach(entity:Entity) {
 		this.entity = entity;
 		this.attached = true;
+		this.onAttached();
 	}
 
-	canAttach(entity:Entity):boolean {
+	onAttached():void {}
+
+	canAttach(entity:Entity): boolean {
 		const componentKeys = Object.keys(entity.components);
 		for(let requirement of this.required) {
 			if(!componentKeys.includes(requirement)) {

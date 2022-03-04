@@ -1,17 +1,17 @@
-import GameObject from "./gameObject";
+import Entity from "./entities/entity";
 
 export class World {
-	private objects:GameObject[] = [];
+	private objects:Entity[] = [];
 	
 	constructor() {
-
+		
 	}
 
-	public addObject(object:GameObject) {
+	public addObject(object:Entity) {
 		this.objects.push(object);
 	}
 
-	public removeObject(object:GameObject) {
+	public removeObject(object:Entity) {
 		let index = this.objects.indexOf(object);
 		if(index != -1) {
 			this.objects.splice(index, 1);

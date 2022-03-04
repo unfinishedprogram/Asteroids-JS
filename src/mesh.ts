@@ -1,8 +1,7 @@
-import { IDrawable } from "./drawable";
 import Triangle from "./triangle";
 import Vec2 from "./vec2";
 
-export default class Mesh implements IDrawable {
+export default class Mesh {
 	constructor(private triangles: Triangle[], public position:Vec2) {};
 	draw(ctx:CanvasRenderingContext2D) {
 		for(let tri of this.triangles) {
