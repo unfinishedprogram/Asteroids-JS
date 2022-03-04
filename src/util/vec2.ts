@@ -11,7 +11,10 @@ export interface IVec2 {
 
 export default class Vec2 implements IVec2{
 	constructor(public x:number, public y:number) {
+		
 	}
+
+	static ZERO = new Vec2(0, 0);
 
 	set (x:number, y:number):this {
 		[this.x, this.y] = [x, y];

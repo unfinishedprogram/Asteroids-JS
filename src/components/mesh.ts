@@ -1,4 +1,4 @@
-import Vec2 from "../vec2";
+import Vec2 from "../util/vec2";
 import Component, { ComponentName } from "./component";
 
 type Tri = [number, number, number]

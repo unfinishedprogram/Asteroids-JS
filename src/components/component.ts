@@ -1,6 +1,6 @@
 import Entity from "../entities/entity";
 
-export type ComponentName = "position" | "mesh" | "renderer";
+export type ComponentName = "position" | "mesh" | "renderer" | "hitbox";
 
 export default abstract class Component {
 	abstract name: ComponentName;

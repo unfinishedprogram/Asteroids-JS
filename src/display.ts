@@ -13,5 +13,6 @@ export class display {
 	}
 
 	drawWorld(world:World) {
+		
 	}
 }

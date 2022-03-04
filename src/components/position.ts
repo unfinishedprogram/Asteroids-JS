@@ -1,4 +1,4 @@
-import Vec2, { IVec2 } from "../vec2";
+import Vec2, { IVec2 } from "../util/vec2";
 import Component, { ComponentName } from "./component";
 
 export default class Position extends Component implements IVec2 {

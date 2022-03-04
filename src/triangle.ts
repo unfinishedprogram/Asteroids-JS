@@ -1,4 +1,4 @@
-import Vec2 from "./vec2";
+import Vec2 from "./util/vec2";
 
 export default class Triangle {
 	constructor(public a:Vec2, public b:Vec2, public c:Vec2) {}
