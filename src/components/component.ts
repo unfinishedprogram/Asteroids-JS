@@ -1,6 +1,6 @@
-import Entity from "../entities/entity";
+import Entity, { Components } from "../entities/entity";
 
-export type ComponentName = "position" | "mesh" | "renderer" | "hitbox";
+export type ComponentName = keyof Components;
 
 export default abstract class Component {
 	abstract name: ComponentName;
@@ -16,7 +16,7 @@ export default abstract class Component {
 		this.onAttached();
 	}
 
-	onAttached():void {}
+	onAttached():void {};
 
 	canAttach(entity:Entity): boolean {
 		const componentKeys = Object.keys(entity.components);

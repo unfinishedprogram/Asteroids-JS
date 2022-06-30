@@ -10,10 +10,14 @@ export interface IVec2 {
 }
 
 export default class Vec2 implements IVec2{
-	constructor(public x:number, public y:number) {
-		
-	}
+	constructor(public x:number, public y:number) {}
 
+	// Used for calculations where a temporary vector would need to be made
+	// This is to avoid memory allocation
+	static tmp = new Vec2(0, 0);
+
+
+	// A zero vector
 	static ZERO = new Vec2(0, 0);
 
 	set (x:number, y:number):this {
@@ -66,5 +70,10 @@ export default class Vec2 implements IVec2{
 
 	public distance(v:Vec2){
 		return this.clone().add(v).magnitude;
+	}
+
+	// Cheaper version of distance function without sqrt
+	public static distanceSq(v1:Vec2, v2:Vec2){
+		return ((v1.x - v2.x) ** 2) + ((v1.y - v2.y) ** 2)
 	}
 }
